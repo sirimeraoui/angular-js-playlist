@@ -18,3 +18,12 @@ Directives tell angular to perform some kind of behaviour to help us out(tell it
 There are attribute directives like ng-app or html ones which can be custom made ex.<ninja></ninja>
 check the docs for more info :https://docs.angularjs.org/api/ng/directive
 
+fourth pl6 : Expressions
+ . {{5*5}}=>25
+ . {{var1+var2}}
+ . {{user.name}}
+ . ng-init allows to initialize some data   when the app loads(not good as habit)
+   ex.<body ng-init="color='orange'">
+          <p class="{{color}}">hello orange css</p>
+      </body>
+      inside css add: .orange{color=orange;}
