@@ -35,3 +35,6 @@ ls7: ng-repeat
        <li ng-repeat="el in array">{{el}}</li>
     </ul>
     </body>
+
+
+ls8:Modules are defined in js files ex.app.js and referenced in ng-app (check app.js)
