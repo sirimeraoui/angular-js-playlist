@@ -5,7 +5,7 @@ first pl3 :
 
 second pl4 : 2 way data binding
 cuz wa can update the data from the model or from the view and the updates cascade in the model & the view
-  . add an angular directive inside of the html tag(or another) to give angular control over the DOM elements inside of that tag (telling it eveyting inside is our app)ex.<html ng-app>
+  . add an angular directive inside of the html tag(or another) to give angular control over the DOM elements inside of that tag (telling it everything inside is our app)ex.<html ng-app>
   . add another directive inside of an input tag so that we can store the data inside of the model attribute like so : <input type="text" ng-model="favMeat"* placeholder="enter your fav meat">
   with spring it would be smth like this :
     <form action="#" th:action="@{/comments/saveNewComment}" th:object="${comment}" method="POST">
@@ -29,9 +29,9 @@ fourth pl6 : Expressions
       inside css add: .orange{color=orange;}
 
 ls7: ng-repeat
-for getting elements in an array ex.
-<body ng-init="array=['el1','el2',eln']">
- -<ul>
-      <li ng-repeat="el in array">{{el}}</li>
-  </ul>
-</body>
+    for getting elements in an array ex.
+    <body ng-init="array=['el1','el2',eln']">
+    -<ul>
+       <li ng-repeat="el in array">{{el}}</li>
+    </ul>
+    </body>
