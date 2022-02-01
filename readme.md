@@ -27,3 +27,11 @@ fourth pl6 : Expressions
           <p class="{{color}}">hello orange css</p>
       </body>
       inside css add: .orange{color=orange;}
+
+ls7: ng-repeat
+for getting elements in an array ex.
+<body ng-init="array=['el1','el2',eln']">
+ -<ul>
+      <li ng-repeat="el in array">{{el}}</li>
+  </ul>
+</body>
