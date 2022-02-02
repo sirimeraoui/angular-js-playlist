@@ -2,7 +2,7 @@
 //the [] will contain the dependecies
 //all the application code is going reside within this module (we namespaced our app)
 //this module is what will be controlling our application
-var myNinjaApp = anguar.module('myNinjaApp',[]);
+var myNinjaApp = angular.module('myNinjaApp',[]);
 //what comes after happens happens whitin the module var above:
 
 //before app runs
@@ -16,4 +16,10 @@ myNinjaApp.run(function(){
 });
 
 //controllers' declaration
-myNinjaApp.controller
+//spring controller $scope == Model model
+//put array brackets to protect the var $scope from minification
+myNinjaApp.controller('NinjaController',['$scope','dependencies',function($scope,dependencies){
+    //similar to the :modeladdAttribute in spring    
+    $scope.message="hey y'all";
+    $scope.ninjas=['yoshi','sakura','nirvana'];
+}]);
