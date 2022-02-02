@@ -11,7 +11,7 @@
         <input type="text" ng-model="search">
            <ul>
              <!-- the minus name means from z to a-->
-             <li ng-repeat="ninja in ninjas | orderBy:'-name' | filter:search">{{ninja.name}}</li>
+             <li ng-repeat="ninja in ninjas | orderBy:'-name' | filter:search">{{ninja.name}} - {{ninja.rate | currency :'euro'}}</li>
            </ul>
       </div>
   </body>

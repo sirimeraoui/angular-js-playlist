@@ -23,23 +23,28 @@ myNinjaApp.controller('NinjaController',['$scope',function($scope){
     $scope.ninjas=[
         {
           name:"yoshi",
-          belt:"green"
+          belt:"green",
+          rate:50
         },
         {
           name:"crystal",
-          belt:"transparent"
+          belt:"transparent",
+          rate:30
         },
         {
             name:"crystol",
-            belt:"transparent"
+            belt:"transparent",
+            rate:40
         },
         {
            name:"shaun",
-           belt:"black"
+           belt:"black",
+           rate:45
         },
         {
            name:"the Ship",
-           belt:"white"
+           belt:"white",
+           rate:70
         }
     ];
 }]);
