@@ -8,9 +8,10 @@
   </head>
   <body>
       <div ng-controller="NinjaController">
-           <p>{{message}}</p>
+        <input type="text" ng-model="search">
            <ul>
-             <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+             <!-- the minus name means from z to a-->
+             <li ng-repeat="ninja in ninjas | orderBy:'-name' | filter:search">{{ninja.name}}</li>
            </ul>
       </div>
   </body>

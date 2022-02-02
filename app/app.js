@@ -18,8 +18,28 @@ myNinjaApp.run(function(){
 //controllers' declaration
 //spring controller $scope == Model model
 //put array brackets to protect the var $scope from minification
-myNinjaApp.controller('NinjaController',['$scope','dependencies',function($scope,dependencies){
+myNinjaApp.controller('NinjaController',['$scope',function($scope){
     //similar to the :modeladdAttribute in spring    
-    $scope.message="hey y'all";
-    $scope.ninjas=['yoshi','sakura','nirvana'];
+    $scope.ninjas=[
+        {
+          name:"yoshi",
+          belt:"green"
+        },
+        {
+          name:"crystal",
+          belt:"transparent"
+        },
+        {
+            name:"crystol",
+            belt:"transparent"
+        },
+        {
+           name:"shaun",
+           belt:"black"
+        },
+        {
+           name:"the Ship",
+           belt:"white"
+        }
+    ];
 }]);
