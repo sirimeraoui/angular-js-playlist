@@ -19,6 +19,18 @@ myNinjaApp.run(function(){
 //spring controller $scope == Model model
 //put array brackets to protect the var $scope from minification
 myNinjaApp.controller('NinjaController',['$scope',function($scope){
+    $scope.addNinja = function(){
+         $scope.ninjas.push({
+             name : $scope.newNinja.name,
+             belt : $scope.newNinja.belt,
+             rate : parseInt($scope.newNinja.rate),
+             available: true
+         });
+
+        $scope.newNinja.name = "";
+        $scope.newNinja.belt = "";
+        $scope.newNinja.rate = "";
+    };
     $scope.removeNinja=function(ninja){
         var removedNninja = $scope.ninjas.indexOf(ninja);
         $scope.ninjas.splice(removedNninja,1);
