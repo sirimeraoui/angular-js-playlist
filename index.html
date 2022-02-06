@@ -4,37 +4,15 @@
     <title>TheNetNinja Angular Playlist</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angular.min.js"></script>
-  <script src="app/app.js"></script>
+    <script src="app/lib/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
   </head>
   <body>
     <!--Mo1 watch out for quoations in path-->
     <!--<ng-include src=" 'header.html' "></ng-include>-->
     <!--Mo2 watch out for quoations in path-->
     <header ng-include=" 'header.html' "></header>
+    <main ng-view></main>
     
-    <div class="content">
-      <div ng-controller="NinjaController">
-        <button ng-click="order='name'">Order By Name</button>
-        <button ng-click="order='belt'">Order By Belt</button>
-        <input type="text" ng-model="search" placeholder="Search for a ninja">
-        <ul>
-             <!-- the minus name means from z to a-->
-             <!--or ng-hide="ninja-available" hides all that are true-->
-            <li ng-repeat="ninja in ninjas | orderBy: order | filter:search" ng-show="ninja.available">
-              <img ng-src="{{ninja.thumb}}" ng-show="ninja.thumb" style="margin: -12px 10px 0 0; float:left;width:50px"/>
-              <h3>{{ninja.name}} - {{ninja.rate | currency :'euro'}}</h3>
-
-                <div class='remove' ng-click="removeNinja(ninja)">X</div>
-                <span class="belt" style="background: {{ninja.belt}}">{{ninja.belt}} belt</span>
-            </li>
-        </ul>
-        <form ng-submit="addNinja()">
-          <input type="text" placeholder="name" ng-model="newNinja.name">
-          <input type="text" placeholder="belt" ng-model="newNinja.belt">
-          <input type="text" placeholder="rate" ng-model="newNinja.rate">
-          <input type="submit" value="Add New ninja"/>
-        </form>
-      </div>
-    </div>
   </body>
 </html>

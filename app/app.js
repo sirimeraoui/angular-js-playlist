@@ -2,13 +2,24 @@
 //the [] will contain the dependecies
 //all the application code is going reside within this module (we namespaced our app)
 //this module is what will be controlling our application
-var myNinjaApp = angular.module('myNinjaApp',[]);
+var myNinjaApp = angular.module('myNinjaApp',['ngRoute']);
 //what comes after happens happens whitin the module var above:
 
 //before app runs
-myNinjaApp.config(function(){
-    //here goes preparations before the app runs
-});
+myNinjaApp.config(['$routeProvider',function($routeProvider){
+    //here goes preparations before the app runs routing
+$routeProvider
+     .when('/home',{
+         templateUrl: 'views/home.html'
+     })
+     .when('/directory',{
+         templateUrl: 'views/directory.html',
+         controller: 'NinjaController',
+     })
+     .otherwise({
+         redirectTo:'/home'
+     })
+}]);
 
 //as app runs
 myNinjaApp.run(function(){
