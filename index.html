@@ -21,7 +21,9 @@
              <!-- the minus name means from z to a-->
              <!--or ng-hide="ninja-available" hides all that are true-->
             <li ng-repeat="ninja in ninjas | orderBy: order | filter:search" ng-show="ninja.available">
-                <h3>{{ninja.name}} - {{ninja.rate | currency :'euro'}}</h3>
+              <img ng-src="{{ninja.thumb}}" ng-show="ninja.thumb" style="margin: -12px 10px 0 0; float:left;width:50px"/>
+              <h3>{{ninja.name}} - {{ninja.rate | currency :'euro'}}</h3>
+
                 <div class='remove' ng-click="removeNinja(ninja)">X</div>
                 <span class="belt" style="background: {{ninja.belt}}">{{ninja.belt}} belt</span>
             </li>
