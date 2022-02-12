@@ -29,7 +29,7 @@ myNinjaApp.run(function(){
 //controllers' declaration
 //spring controller $scope == Model model
 //put array brackets to protect the var $scope from minification
-myNinjaApp.controller('NinjaController',['$scope',function($scope){
+myNinjaApp.controller('NinjaController',['$scope','$http',function($scope,$http){
     $scope.addNinja = function(){
          $scope.ninjas.push({
              name : $scope.newNinja.name,
@@ -46,43 +46,10 @@ myNinjaApp.controller('NinjaController',['$scope',function($scope){
         var removedNninja = $scope.ninjas.indexOf(ninja);
         $scope.ninjas.splice(removedNninja,1);
     };
-    //similar to the :modeladdAttribute in spring    
-    $scope.ninjas=[
-        {
-          name:"yoshi",
-          belt:"green",
-          rate:50,
-          available:true,
-          thumb:"content/img/yoshi.png"
-        },
-        {
-          name:"crystal",
-          belt:"transparent",
-          rate:30,
-          available:true,
-          thumb:"content/img/yoshi.png"
-        },
-        {
-            name:"crystol",
-            belt:"transparent",
-            rate:40,
-            available:false,
-            thumb:"content/img/yoshi.png"
-        },
-        {
-           name:"shaun",
-           belt:"black",
-           rate:45,
-           available:true,
-           thumb:"content/img/yoshi.png"
-        },
-        {
-           name:"the Ship",
-           belt:"white",
-           rate:70,
-           available:true,
-           thumb:"content/img/yoshi.png"
+//needs a psython or node server to work
+    $http.get('/data/ninjas.json').success(function(data){
+        $scope.ninjas=data;
+    })
 
-        }
-    ];
+   // console.log(angular.toJson($scope.ninjas));
 }]);
