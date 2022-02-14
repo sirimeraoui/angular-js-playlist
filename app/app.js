@@ -38,6 +38,8 @@ myNinjaApp.directive("randomNinja",[function(){
             title:'='
         },
         templateUrl : "views/random.html",
+        transclude: true,
+        replace:true,
         //template: "{{title}}", 
         //template:'<img ng-src="{{ninjas[random].thumb}}"/>',
         controller: function($scope){
