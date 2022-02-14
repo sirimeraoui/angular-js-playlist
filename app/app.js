@@ -4,7 +4,7 @@
 
 
 //this module is what will be controlling our application
-var myNinjaApp = angular.module('myNinjaApp',['ngRoute']);
+var myNinjaApp = angular.module('myNinjaApp',['ngRoute','ngAnimate']);
 //what comes after happens happens whitin the module var above:
 
 //before app runs

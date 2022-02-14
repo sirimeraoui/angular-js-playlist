@@ -3,7 +3,7 @@
       <button ng-click="order='name'">Order By Name</button>
       <button ng-click="order='belt'">Order By Belt</button>
       <input type="text" ng-model="search" placeholder="Search for a ninja">
-      <ul>
+      <ul id="ninja-list">
            <!-- the minus name means from z to a-->
            <!--or ng-hide="ninja-available" hides all that are true-->
           <li ng-repeat="ninja in ninjas | orderBy: order | filter:search" ng-show="ninja.available">
