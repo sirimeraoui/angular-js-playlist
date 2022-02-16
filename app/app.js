@@ -19,6 +19,9 @@ $routeProvider
          templateUrl: 'views/directory.html',
          controller: 'NinjaController',
      })
+     .when('/contact',{
+         templateUrl:'views/contact.html'
+     })
      .otherwise({
          redirectTo:'/home'
      })
@@ -67,6 +70,9 @@ myNinjaApp.controller('NinjaController',['$scope','$http',function($scope,$http)
         var removedNninja = $scope.ninjas.indexOf(ninja);
         $scope.ninjas.splice(removedNninja,1);
     };
+    $scope.removeAll=function(){
+        $scope.ninjas=[];
+    }
        //similar to the :modeladdAttribute in spring    
        $scope.ninjas=[
         {
